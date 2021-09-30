@@ -12,7 +12,7 @@
     /* Generate computer random hands */ 
 
 function computerPlay() {
-    let comphand = Math.floor(Math.random()*3);
+    let comphand = Math.floor(Math.random() * 3);
     if (comphand == 0){
         return "rock";
     } else if (comphand == 1) {
@@ -25,14 +25,13 @@ function computerPlay() {
     /* If player stands off, win or lose to computer hands each round */
 
     function playRound(playerSelection, computerSelection){
-        let playerInput = playerSelection.toLowerCase();
-        if (playerInput == computerSelection) {
-            winnner = "tie";
-            } else if (playerInput == 
-                "rock" && computerSelection == "scissors" || playerInput == "paper" && computerSelection == "rock" || playerInput == "scissors" && computerSelection == "paper") {
+        if (playerSelection == computerSelection) {
+            winner = "tie";
+            } else if (playerSelection == 
+                "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "paper") {
                     winner = "player";
-            } else if (playerInput == 
-                "scissors" && computerSelection == "rock" || playerInput == "rock" && computerSelection == "paper" || playerInput == "paper" && computerSelection == "scissors"){
+            } else if (playerSelection == 
+                "scissors" && computerSelection == "rock" || playerSelection == "rock" && computerSelection == "paper" || playerSelection == "paper" && computerSelection == "scissors"){
                     winner = "computer";
             } else {
                     winner = "default";
@@ -63,13 +62,16 @@ function computerPlay() {
         };
     };
 
+ /* playerSelection from player*/
+
+
 
 
 function game () {
 
-    /* playerInput from player*/
-
-    const playerChoice = prompt("Rock 🪨, Paper 📄 or Scissors ✂️?") 
+    let playerChoice = prompt("Rock 🪨, Paper 📄 or Scissors ✂️?")
+    
+    playerChoice = playerChoice.toLocaleLowerCase();
     
     playRound(playerChoice, computerPlay());
 
@@ -86,9 +88,9 @@ return winnerDeclaration();
 
 function finalScores(){
     if (playerScores > computerScores) {
-            return `Game over! You have ${playerScores} score(s) , I have  ${computerScores} score(s), you won 🥳  !`
+            return `Game over! You have ${playerScores} score(s) , I have  ${computerScores} score(s), you won 😢 !`
     } else if ( playerScores < computerScores ) {
-           return `Game over! You have ${playerScores} score(s) , I have  ${computerScores} score(s), you lost 😢 ! `
+           return `Game over! You have ${playerScores} score(s) , I have  ${computerScores} score(s), I won 🥳 ! `
     } else { 
            return `Game over! You have ${playerScores} score(s) , I have  ${computerScores} score(s), it's a tie 😐 !`}
 
