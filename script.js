@@ -52,11 +52,11 @@ function computerPlay() {
 
     function winnerDeclaration(){
         if (winner == "player"){
-             return `You won! You score 1, You now have ${playerScores} score(s), I have ${computerScores} score(s).` ;
+             return `You won 😢 ! You score 1, You now have ${playerScores} score(s), I have ${computerScores} score(s).` ;
         } else if (winner == "computer"){
-             return `I won! I score 1, You now have ${playerScores} score(s), I have ${computerScores} score(s).`;
+             return `I won 🥳 ! I score 1, You now have ${playerScores} score(s), I have ${computerScores} score(s).`;
         } else if (winner == "tie"){
-             return `It's a tie! No one scores, You now have ${playerScores} score(s), I have ${computerScores} score(s).`;
+             return `It's a tie 😐 ! No one scores, You now have ${playerScores} score(s), I have ${computerScores} score(s).`;
         } else {
             return `Not a qualified hand, so I'll get 1 score 😏! You now have ${playerScores} score(s), I have ${computerScores} score(s).`
         };
