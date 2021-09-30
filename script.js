@@ -53,13 +53,13 @@ function computerPlay() {
 
     function winnerDeclaration(){
         if (winner == "player"){
-             return `Player won! Player scores 1, player now has ${playerScores} score(s), computer has ${computerScores} score(s).` ;
+             return `You won! You score 1, You now have ${playerScores} score(s), I have ${computerScores} score(s).` ;
         } else if (winner == "computer"){
-             return `Computer won! Computer scores 1, player now has ${playerScores} score(s), computer has ${computerScores} score(s).`;
+             return `I won! I score 1, You now have ${playerScores} score(s), I have ${computerScores} score(s).`;
         } else if (winner == "tie"){
-             return `It's a tie! No one scores, player now has ${playerScores} score(s), computer has ${computerScores} score(s).`;
+             return `It's a tie! No one scores, You now have ${playerScores} score(s), I have ${computerScores} score(s).`;
         } else {
-            return `Not a qualified hand, computer got 1 score! player now has ${playerScores} score(s), computer has ${computerScores} score(s).`
+            return `Not a qualified hand, so I'll get 1 score 😏! You now have ${playerScores} score(s), I have ${computerScores} score(s).`
         };
     };
 
@@ -69,7 +69,7 @@ function game () {
 
     /* playerInput from player*/
 
-    const playerChoice = prompt("Rock, Paper or Scissors?") 
+    const playerChoice = prompt("Rock 🪨, Paper 📄 or Scissors ✂️?") 
     
     playRound(playerChoice, computerPlay());
 
@@ -86,29 +86,39 @@ return winnerDeclaration();
 
 function finalScores(){
     if (playerScores > computerScores) {
-            return `You score ${playerScores}, computer scores ${computerScores}, you won! :)`
+            return `Game over! You have ${playerScores} score(s) , I have  ${computerScores} score(s), you won 🥳  !`
     } else if ( playerScores < computerScores ) {
-           return `You score ${playerScores}, computer scores ${computerScores}, you lost! :(`
+           return `Game over! You have ${playerScores} score(s) , I have  ${computerScores} score(s), you lost 😢 ! `
     } else { 
-           return `You score ${playerScores}, computer scores ${computerScores}, it's a tie! :|`}
+           return `Game over! You have ${playerScores} score(s) , I have  ${computerScores} score(s), it's a tie 😐 !`}
 
  };
 
 
-/* Play 5 rounds with computer 
+/* Play 5 rounds with computer */
 
-function playRounds(){
+function playFiveRounds(){
+    alert("Play five rounds of rock-paper-scissors with me!")
 for (let i = 0; i < 5; i ++){
-    game();
+   alert (game());
  };
+ alert(finalScores());
 };
 
+function firstFiveWins(){
+    alert("Wanna challenge me with rock-paper-scissors 😈 ? Who gets five scores first wins!")
+while (playerScores < 5 && computerScores <5){
+    alert (game());
+};
+    alert(finalScores());
+}
+
+/*playFiveRounds();*/
+
+firstFiveWins();
 
 
-playRounds();
 
-
-*/
 
 
 
