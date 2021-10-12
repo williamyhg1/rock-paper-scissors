@@ -67,7 +67,7 @@ function winnerDeclaration() {
 
 function game() {
   let playerChoice = prompt("Rock 🪨, Paper 📄 or Scissors ✂️?");
-  playerChoice = playerChoice.toLocaleLowerCase();
+  playerChoice = playerChoice.toLowerCase();
   playRound(playerChoice, computerPlay());
   updateScores();
   return winnerDeclaration();
@@ -105,4 +105,4 @@ function firstFiveWins() {
   alert(finalScores());
 }
 
-firstFiveWins();
+
