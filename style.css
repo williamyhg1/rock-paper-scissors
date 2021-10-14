@@ -1,3 +1,117 @@
-div {
-    background-color: rgb(205, 255, 205);
+body {
+    width: 100%;
+    height: 100vmin;
+    color: #fff;
+    background: linear-gradient(
+      45deg,
+      #e2592f,
+      #dd1964,
+      #0faee7,
+      #16d861,
+      #f5d314
+    );
+    background-size: 500%;
+    animation: backgroundGradient 20s ease infinite;
+  }
+  
+  @keyframes backgroundGradient {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+  
+
+.gameName {
+  margin: 50px;
+  font-size: 100px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+  animation: growAndShrink 5s linear infinite;
+}
+
+@keyframes growAndShrink {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  padding: 40px;
+ 
+}
+
+img {
+  border: 5px silver solid;
+  display: flex;
+  width: 150px;
+  height: 150px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+img:hover {
+  border: 5px silver solid;
+  display: flex;
+  width: 180px;
+  height: 180px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.computerScore,
+.playerScore {
+  border: 5px silver solid;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 150px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+   align-items: center;
+   
+   font-size: 32px;
+}
+
+
+.score {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding: 40px;
+
+  }
+
+#target {
+    text-align: center;
+    font-size: 50px;
 }
