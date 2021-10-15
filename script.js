@@ -19,6 +19,9 @@ function computerPlay() {
 /* If player stands off, win or lose to computer hands each round */
 
 function playRound(playerSelection, computerSelection) {
+  const computerhand = document.querySelector(".computerhand");
+  computerhand.textContent = 'My hand is ' + computerSelection + '!' ;
+  
   if (playerSelection == computerSelection) {
     winner = "tie";
   } else if (
@@ -125,15 +128,11 @@ function game(e) {
 
   updateScores();
 
-  //show game results in console for testing purpose, need to be removed
-  console.log(winner);
-  console.log(playerScores);
-  console.log(computerScores);
-
   //remove old scores//
   const removeElements = (elms) => elms.forEach((el) => el.remove());
-
   removeElements(document.querySelectorAll(".showScore"));
+  
+
 
   //Computer and Player Score panels
   const showScore1 = document.createElement("div");
@@ -148,55 +147,13 @@ function game(e) {
   playerScoreEl = document.querySelector(".playerScore");
   playerScoreEl.append(showScore2);
 
+  //Declare winner
   const declarationEl = document.querySelector(".declaration");
   declarationEl.textContent = winnerDeclaration();
+  
+  //Final Result
+  //Reset Game -- play again
+
+
 }
 
-// let playerChoice
-
-// rock.addEventListener('click',() => playerChoice = 'rock')
-// paper.addEventListener('click',() => playerChoice = 'paper')
-// scissors.addEventListener('click',() => playerChoice = 'scissors')
-
-// console.log(playerChoice)
-
-//  if (element == rock){
-//   broadcastElement.textContent = 'rock';
-// } else if (element == paper){
-//   broadcastElement.textContent = 'paper';
-// } else if (element == scissors){
-//   broadcastElement.textContent = 'scissors';
-// }
-
-// const textElement = document.createElement('p');
-// textElement.textContent = 'This is a Test Message'
-// target = document.getElementById('target')
-
-// function showHand(){
-//  target.append(textElement)
-//  setTimeout(() =>
-//   textElement.remove()
-//   , 1500)
-// }
-
-// rock.addEventListener('mousedown', showHand)
-
-/*
-
-
-
-const declaration = document.getElementById('broadcast')
-
-function sayHiR(){
-  declaration.appendChild(playerhandRock);
-}
-function sayHiP(){
-  declaration.appendChild(playerhandPaper);
-}
-function sayHiS(){
-  declaration.appendChild(playerhandScissors);
-}
-
-const scores = document.createElement('p')
-computerScore.appendChild('scores').textContent = '5';
-playerScore.appendChild('scores').textContent = '10';*/

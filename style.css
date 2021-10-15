@@ -1,6 +1,6 @@
 body {
   width: 100%;
-  height: 60vmax;
+  height: 55vmax;
   color: #fff;
   background: linear-gradient(
     45deg,
@@ -12,6 +12,7 @@ body {
   );
   background-size: 500%;
   animation: backgroundGradient 20s ease infinite;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
 @keyframes backgroundGradient {
@@ -27,9 +28,8 @@ body {
 }
 
 .gameName {
-  margin: 50px;
+  margin: 30px;
   font-size: 100px;
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   text-align: center;
   animation: growAndShrink 5s linear infinite;
 }
@@ -108,12 +108,13 @@ img:hover {
 }
 
 .showScore {
-  font-size: 60px;
-  margin: 40px;
+  font-size: 100px;
+  margin-top: 15px;
 }
 
-.declaration {
-  font-size: 60px;
-  margin: 40px;
+.declaration,
+.computerhand {
+  font-size: 70px;
+  margin: 20px;
   text-align: center;
 }
