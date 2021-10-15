@@ -1,5 +1,4 @@
 /* Scores will be updated after each round of game */
-
 let playerScores = 0;
 let computerScores = 0;
 let winner = " ";
@@ -10,13 +9,10 @@ function computerPlay() {
   let computerhand = Math.floor(Math.random() * 3);
   if (computerhand == 0) {
     return "rock";
-    
   } else if (computerhand == 1) {
     return "paper";
-    
   } else {
     return "scissors";
-    
   }
 }
 
@@ -56,13 +52,11 @@ function updateScores() {
 
 function winnerDeclaration() {
   if (winner == "player") {
-    return `You won 😢 ! You score 1, You now have ${playerScores} score(s), I have ${computerScores} score(s).`;
+    return `You won 😢 ! `;
   } else if (winner == "computer") {
-    return `I won 🥳 ! I score 1, You now have ${playerScores} score(s), I have ${computerScores} score(s).`;
+    return `I won 🥳 !`;
   } else if (winner == "tie") {
-    return `It's a tie 😐 ! No one scores, You now have ${playerScores} score(s), I have ${computerScores} score(s).`;
-  } else {
-    return `Not a qualified hand, so I'll get 1 score 😏! You now have ${playerScores} score(s), I have ${computerScores} score(s).`;
+    return `It's a tie 😐 !`;
   }
 }
 
@@ -106,49 +100,73 @@ function firstFiveWins() {
   alert(finalScores());
 }
 
+const rock = document.querySelector(".rock");
+const paper = document.querySelector(".paper");
+const scissors = document.querySelector(".scissors");
 
+//Generate games from player clicks the image//
+paper.addEventListener("click", game);
+scissors.addEventListener("click", game);
+rock.addEventListener("click", game);
 
-const rock = document.querySelector('.rock');
-const paper = document.querySelector('.paper');
-const scissors = document.querySelector('.scissors');
+//Algorithm for interaction
 
+function game(e) {
+  let playerChoice;
+  if (e.target.className == "rock") {
+    playerChoice = "rock";
+  } else if (e.target.className == "paper") {
+    playerChoice = "paper";
+  } else if (e.target.className == "scissors") {
+    playerChoice = "scissors";
+  }
 
-// function getPlayerHand(e){
+  playRound(playerChoice, computerPlay());
 
-// let playerChoice  
-// if(e.target.className == 'rock'){
-// playerChoice = 'rock';
-// } else if (e.target.className == 'paper'){
-//   playerChoice = 'paper'
-// } else if(e.target.className == 'scissors'){
-//   playerChoice = 'scissors'
+  updateScores();
+
+  //show game results in console for testing purpose, need to be removed
+  console.log(winner);
+  console.log(playerScores);
+  console.log(computerScores);
+
+  //remove old scores//
+  const removeElements = (elms) => elms.forEach((el) => el.remove());
+
+  removeElements(document.querySelectorAll(".showScore"));
+
+  //Computer and Player Score panels
+  const showScore1 = document.createElement("div");
+  showScore1.className = "showScore";
+  showScore1.textContent = computerScores;
+  computerScoreEl = document.querySelector(".computerScore");
+  computerScoreEl.append(showScore1);
+
+  const showScore2 = document.createElement("div");
+  showScore2.className = "showScore";
+  showScore2.textContent = playerScores;
+  playerScoreEl = document.querySelector(".playerScore");
+  playerScoreEl.append(showScore2);
+
+  const declarationEl = document.querySelector(".declaration");
+  declarationEl.textContent = winnerDeclaration();
+}
+
+// let playerChoice
+
+// rock.addEventListener('click',() => playerChoice = 'rock')
+// paper.addEventListener('click',() => playerChoice = 'paper')
+// scissors.addEventListener('click',() => playerChoice = 'scissors')
+
+// console.log(playerChoice)
+
+//  if (element == rock){
+//   broadcastElement.textContent = 'rock';
+// } else if (element == paper){
+//   broadcastElement.textContent = 'paper';
+// } else if (element == scissors){
+//   broadcastElement.textContent = 'scissors';
 // }
-//   console.log(playerChoice)
-// }
-
-let playerChoice
-
-rock.addEventListener('click',() => playerChoice = 'rock')
-paper.addEventListener('click',() => playerChoice = 'paper')
-scissors.addEventListener('click',() => playerChoice = 'scissors')
-
-console.log(playerChoice)
-
-
-//Generate computer hand//
-//rock.addEventListener('click', game());
-
-//Generat
-
-
-  //  if (element == rock){
-  //   broadcastElement.textContent = 'rock';
-  // } else if (element == paper){
-  //   broadcastElement.textContent = 'paper';
-  // } else if (element == scissors){
-  //   broadcastElement.textContent = 'scissors';
-  // } 
-
 
 // const textElement = document.createElement('p');
 // textElement.textContent = 'This is a Test Message'
@@ -156,16 +174,12 @@ console.log(playerChoice)
 
 // function showHand(){
 //  target.append(textElement)
-//  setTimeout(() => 
+//  setTimeout(() =>
 //   textElement.remove()
 //   , 1500)
 // }
 
-
-
-
 // rock.addEventListener('mousedown', showHand)
-
 
 /*
 
@@ -186,7 +200,3 @@ function sayHiS(){
 const scores = document.createElement('p')
 computerScore.appendChild('scores').textContent = '5';
 playerScore.appendChild('scores').textContent = '10';*/
-
-
-
-
