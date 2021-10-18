@@ -19,9 +19,8 @@ function computerPlay() {
 /* If player stands off, win or lose to computer hands each round */
 const computerhand = document.querySelector(".computerhand");
 function playRound(playerSelection, computerSelection) {
-  
-  computerhand.textContent = 'My hand is ' + computerSelection + '!' ;
-  
+  computerhand.textContent = "My hand is " + computerSelection + "!";
+
   if (playerSelection == computerSelection) {
     winner = "tie";
   } else if (
@@ -63,8 +62,6 @@ function winnerDeclaration() {
   }
 }
 
-
-
 /* Calculate final scores after all rounds*/
 
 function finalWinner() {
@@ -77,22 +74,8 @@ function finalWinner() {
   }
 }
 
-/* Play 5 rounds with computer  five rounds or get 5 scores first*/
 
-function playFiveRounds() {
-  for (let i = 0; i < 5; i++) {
-    game();
-  }
-  finalScores();
-}
-
-function firstFiveWins() {
-
-  while (playerScores < 5 && computerScores < 5) {
-    game();
-  }
-  alert(finalScores());
-}
+//Create rock, paper and scissors elements for player selection
 
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
@@ -103,10 +86,9 @@ paper.addEventListener("click", game);
 scissors.addEventListener("click", game);
 rock.addEventListener("click", game);
 
-//Algorithm for interaction
+//Algorithm for game interaction
 
 function game(e) {
-  
   let playerChoice;
   if (e.target.className == "rock") {
     playerChoice = "rock";
@@ -125,31 +107,25 @@ function game(e) {
   showScore1.textContent = computerScores;
   const showScore2 = document.querySelector(".showScore2");
   showScore2.textContent = playerScores;
-  
-  
-  
-  
-  
+
   // Declare winner & Final Result
   const declarationEl = document.querySelector(".declaration");
-  if (playerScores < 5 && computerScores < 5){
-    declarationEl.textContent = winnerDeclaration()
+  if (playerScores < 5 && computerScores < 5) {
+    declarationEl.textContent = winnerDeclaration();
   } else if (playerScores == 5 || computerScores == 5) {
     computerhand.textContent = finalWinner();
-    declarationEl.textContent = '';
-    declarationEl.append(replay)
-    rock.removeEventListener('click', game);
-    paper.removeEventListener('click', game);
-    scissors.removeEventListener('click', game);
+    declarationEl.textContent = " ";
+    declarationEl.append(replay);
+    rock.removeEventListener("click", game);
+    paper.removeEventListener("click", game);
+    scissors.removeEventListener("click", game);
   }
-
-  
 }
 //Reset Game -- play again
-const replay = document.createElement('div');
-replay.setAttribute('id','replay');
-replay.textContent = '👉 Click here to play again 👈';
-function reload(){
-  window.location.reload()
+const replay = document.createElement("div");
+replay.setAttribute("id", "replay");
+replay.textContent = "👉 Click here to play again 👈";
+function reload() {
+  window.location.reload();
 }
-replay.addEventListener('click', reload);
+replay.addEventListener("click", reload);

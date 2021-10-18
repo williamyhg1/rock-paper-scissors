@@ -1,8 +1,8 @@
-
+/* Background animation */
 
 body {
   width: 100%;
-  height: 990px;;
+  height: 990px;
   color: #fff;
   background: linear-gradient(
     45deg,
@@ -29,10 +29,11 @@ body {
   }
 }
 
+/* Game title and animation */
 .gameName {
   font-size: 100px;
   text-align: center;
-  padding: 20px;
+  padding: 15px;
   animation: growAndShrink 5s linear infinite;
 }
 
@@ -54,6 +55,7 @@ body {
   }
 }
 
+/* Rock, paper & scissors image container */
 .container {
   display: flex;
   justify-content: center;
@@ -66,19 +68,19 @@ img {
   display: flex;
   width: 150px;
   height: 150px;
-  padding: 10px;
+  padding: 20px;
   border-radius: 16px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    
 }
 
 img:hover {
-    opacity: 0.7;
-    cursor: pointer;
+  opacity: 0.7;
+  cursor: pointer;
 }
 
+/* Score panels */
 .computerScore,
 .playerScore {
   border: 5px silver solid;
@@ -108,6 +110,7 @@ img:hover {
   margin-top: 15px;
 }
 
+/* Announcement area */
 .declaration,
 .computerhand {
   font-size: 70px;
@@ -115,12 +118,7 @@ img:hover {
   text-align: center;
 }
 
-footer {
-  text-align: center;
-  font-size: 30px;
-  color: black;
-}
-#replay{
+#replay {
   cursor: pointer;
   color: black;
   border: 5px silver solid;
@@ -137,4 +135,9 @@ footer {
   flex-direction: column;
   align-items: center;
   padding: 20px;
+}
+
+footer {
+  text-align: center;
+  font-size: 30px;
 }
