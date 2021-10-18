@@ -1,6 +1,8 @@
+
+
 body {
   width: 100%;
-  height: 55vmax;
+  height: 100%;
   color: #fff;
   background: linear-gradient(
     45deg,
@@ -10,7 +12,7 @@ body {
     #16d861,
     #f5d314
   );
-  background-size: 500%;
+  background-size: 300%;
   animation: backgroundGradient 20s ease infinite;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
@@ -28,9 +30,9 @@ body {
 }
 
 .gameName {
-  margin: 30px;
   font-size: 100px;
   text-align: center;
+  padding: 30px;
   animation: growAndShrink 5s linear infinite;
 }
 
@@ -56,7 +58,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 100px;
-  padding: 40px;
+  padding: 30px;
 }
 
 img {
@@ -64,7 +66,7 @@ img {
   display: flex;
   width: 150px;
   height: 150px;
-  padding: 20px;
+  padding: 10px;
   border-radius: 16px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
@@ -73,17 +75,8 @@ img {
 }
 
 img:hover {
-  border: 5px silver solid;
-  display: flex;
-  width: 150px;
-  height: 150px;
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    ;
-    opacity:0.8;
+    opacity: 0.7;
+    cursor: pointer;
 }
 
 .computerScore,
@@ -99,7 +92,6 @@ img:hover {
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   align-items: center;
-
   font-size: 45px;
 }
 
@@ -119,12 +111,18 @@ img:hover {
 .declaration,
 .computerhand {
   font-size: 70px;
-  margin: 20px;
+  margin: 30px;
   text-align: center;
 }
 
 footer {
   text-align: center;
   font-size: 30px;
-  
+  margin-bottom: 0px;
+  background-color: blanchedalmond;
+  color: black;
+}
+#replay{
+  cursor: pointer;
+  color: black;
 }

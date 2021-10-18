@@ -63,13 +63,7 @@ function winnerDeclaration() {
   }
 }
 
-/* Selection from player and commence the game */
 
-function game() {
-  playRound(playerChoice, computerPlay());
-  updateScores();
-  return winnerDeclaration();
-}
 
 /* Calculate final scores after all rounds*/
 
@@ -113,8 +107,6 @@ rock.addEventListener("click", game);
 
 function game(e) {
   
-  
-
   let playerChoice;
   if (e.target.className == "rock") {
     playerChoice = "rock";
@@ -138,19 +130,30 @@ function game(e) {
   
   
   
-  // Declare winner & Final Result after five rounds
+  // Declare winner & Final Result
   const declarationEl = document.querySelector(".declaration");
   if (playerScores < 5 && computerScores < 5){
     declarationEl.textContent = winnerDeclaration()
   } else if (playerScores == 5 || computerScores == 5) {
     computerhand.textContent = finalScores();
-    declarationEl.textContent = 'Do you want to play again?';
+    declarationEl.textContent = '';
+    declarationEl.append(replay)
+    rock.removeEventListener('click', game);
+    paper.removeEventListener('click', game);
+    scissors.removeEventListener('click', game);
   }
 
-  //Reset Game -- play again
+  
+}
+//Reset Game -- play again
+const replay = document.createElement('div')
+replay.setAttribute('id', 'replay')
+replay.textContent = '👉 Click here to play again 👈';
 
 
+
+function reload(){
+  window.location.reload()
 }
 
-// const reply = document.createElement('div')
-// reply.className = 
+replay.addEventListener('click', reload);
