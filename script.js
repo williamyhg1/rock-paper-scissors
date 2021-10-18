@@ -67,7 +67,7 @@ function winnerDeclaration() {
 
 /* Calculate final scores after all rounds*/
 
-function finalScores() {
+function finalWinner() {
   if (playerScores > computerScores) {
     return `Game over! you won 😢 !`;
   } else if (playerScores < computerScores) {
@@ -135,7 +135,7 @@ function game(e) {
   if (playerScores < 5 && computerScores < 5){
     declarationEl.textContent = winnerDeclaration()
   } else if (playerScores == 5 || computerScores == 5) {
-    computerhand.textContent = finalScores();
+    computerhand.textContent = finalWinner();
     declarationEl.textContent = '';
     declarationEl.append(replay)
     rock.removeEventListener('click', game);
@@ -146,14 +146,10 @@ function game(e) {
   
 }
 //Reset Game -- play again
-const replay = document.createElement('div')
-replay.setAttribute('id', 'replay')
+const replay = document.createElement('div');
+replay.setAttribute('id','replay');
 replay.textContent = '👉 Click here to play again 👈';
-
-
-
 function reload(){
   window.location.reload()
 }
-
 replay.addEventListener('click', reload);
