@@ -17,9 +17,9 @@ function computerPlay() {
 }
 
 /* If player stands off, win or lose to computer hands each round */
-
+const computerhand = document.querySelector(".computerhand");
 function playRound(playerSelection, computerSelection) {
-  const computerhand = document.querySelector(".computerhand");
+  
   computerhand.textContent = 'My hand is ' + computerSelection + '!' ;
   
   if (playerSelection == computerSelection) {
@@ -75,30 +75,27 @@ function game() {
 
 function finalScores() {
   if (playerScores > computerScores) {
-    return `Game over! You have ${playerScores} score(s) , I have  ${computerScores} score(s), you won 😢 !`;
+    return `Game over! you won 😢 !`;
   } else if (playerScores < computerScores) {
-    return `Game over! You have ${playerScores} score(s) , I have  ${computerScores} score(s), I won 🥳 ! `;
+    return `Game over! I won 🥳 ! `;
   } else {
-    return `Game over! You have ${playerScores} score(s) , I have  ${computerScores} score(s), it's a tie 😐 !`;
+    return `Game over! it's a tie 😐 !`;
   }
 }
 
 /* Play 5 rounds with computer  five rounds or get 5 scores first*/
 
 function playFiveRounds() {
-  alert("Play five rounds of rock-paper-scissors with me!");
   for (let i = 0; i < 5; i++) {
-    alert(game());
+    game();
   }
-  alert(finalScores());
+  finalScores();
 }
 
 function firstFiveWins() {
-  alert(
-    "Wanna challenge me with rock-paper-scissors 😈 ? Who gets five scores first wins!"
-  );
+
   while (playerScores < 5 && computerScores < 5) {
-    alert(game());
+    game();
   }
   alert(finalScores());
 }
@@ -115,6 +112,9 @@ rock.addEventListener("click", game);
 //Algorithm for interaction
 
 function game(e) {
+  
+  
+
   let playerChoice;
   if (e.target.className == "rock") {
     playerChoice = "rock";
@@ -128,32 +128,29 @@ function game(e) {
 
   updateScores();
 
-  //remove old scores//
-  const removeElements = (elms) => elms.forEach((el) => el.remove());
-  removeElements(document.querySelectorAll(".showScore"));
-  
-
-
   //Computer and Player Score panels
-  const showScore1 = document.createElement("div");
-  showScore1.className = "showScore";
+  const showScore1 = document.querySelector(".showScore1");
   showScore1.textContent = computerScores;
-  computerScoreEl = document.querySelector(".computerScore");
-  computerScoreEl.append(showScore1);
-
-  const showScore2 = document.createElement("div");
-  showScore2.className = "showScore";
+  const showScore2 = document.querySelector(".showScore2");
   showScore2.textContent = playerScores;
-  playerScoreEl = document.querySelector(".playerScore");
-  playerScoreEl.append(showScore2);
-
-  //Declare winner
-  const declarationEl = document.querySelector(".declaration");
-  declarationEl.textContent = winnerDeclaration();
   
-  //Final Result
+  
+  
+  
+  
+  // Declare winner & Final Result after five rounds
+  const declarationEl = document.querySelector(".declaration");
+  if (playerScores < 5 && computerScores < 5){
+    declarationEl.textContent = winnerDeclaration()
+  } else if (playerScores == 5 || computerScores == 5) {
+    computerhand.textContent = finalScores();
+    declarationEl.textContent = 'Do you want to play again?';
+  }
+
   //Reset Game -- play again
 
 
 }
 
+// const reply = document.createElement('div')
+// reply.className = 
