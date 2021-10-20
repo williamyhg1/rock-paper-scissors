@@ -110,7 +110,6 @@ img:hover {
   margin-top: 15px;
 }
 
-/* Announcement area */
 .declaration,
 .computerhand {
   font-size: 70px;
@@ -140,4 +139,5 @@ img:hover {
 footer {
   text-align: center;
   font-size: 30px;
+  color: black;
 }
