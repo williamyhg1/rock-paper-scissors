@@ -1,20 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="script.js"></script>
-</head>
-<body>
-    <div class='selection'> TEST </div>
-    
-    <div class='score'></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock-Paper-Scissors</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="img/scissors.png">
+  </head>
+  <body>
+    <div class="gameName">Rock Papper Scissors</div>
 
-    <div class='declaration'></div>
+    <div class="container">
+      <img class="rock" src="img/rock.png" alt="" />
+      <img class="paper" src="img/paper.png" alt="" />
+      <img class="scissors" src="img/scissors.png" alt="" />
+    </div>
 
-
-  
-</body>
+    <div class="score">
+      <div class="computerScore">
+        <div>Computer Score</div>
+        <div class="showScore1">0</div>
+      </div>
+      <div class="playerScore">
+        <div>Player Score</div>
+        <div class="showScore2">0</div>
+      </div>
+    </div>
+    <div class="announcement">
+      <div class="computerhand">Do you want to challenge me😈 ?</div>
+      <div class="declaration">Who gets five scores first wins!</div>
+    </div>
+    <footer>Copyright @ 2021 William Huang</footer>
+  </body>
 </html>

@@ -1,3 +1,143 @@
-div {
-    background-color: rgb(205, 255, 205);
+/* Background animation */
+
+body {
+  width: 100%;
+  height: 990px;
+  color: #fff;
+  background: linear-gradient(
+    45deg,
+    #e2592f,
+    #dd1964,
+    #0faee7,
+    #16d861,
+    #f5d314
+  );
+  background-size: 500%;
+  animation: backgroundGradient 20s ease infinite;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+@keyframes backgroundGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* Game title and animation */
+.gameName {
+  font-size: 100px;
+  text-align: center;
+  padding: 15px;
+  animation: growAndShrink 5s linear infinite;
+}
+
+@keyframes growAndShrink {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.15);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Rock, paper & scissors image container */
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  margin: 30px;
+}
+
+img {
+  border: 5px silver solid;
+  display: flex;
+  width: 150px;
+  height: 150px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+img:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+/* Score panels */
+.computerScore,
+.playerScore {
+  border: 5px silver solid;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  align-items: center;
+  font-size: 45px;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  padding: 10px;
+}
+
+.showScore1,
+.showScore2 {
+  font-size: 100px;
+  margin-top: 15px;
+}
+
+.declaration,
+.computerhand {
+  font-size: 70px;
+  margin: 10px;
+  text-align: center;
+}
+
+#replay {
+  cursor: pointer;
+  color: black;
+  border: 5px silver solid;
+  width: 900px;
+  height: 90px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.announcement {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+footer {
+  text-align: center;
+  font-size: 30px;
+  color: black;
 }
